@@ -1,0 +1,110 @@
+// ==============================================================================
+// POWER BI DAX MEASURES: E-COMMERCE RETURN RATE REDUCTION ANALYSIS
+// Star Schema: Dim_Products, Dim_Suppliers, Dim_Customers, Dim_Dates, Fact_Orders_Scored
+// ==============================================================================
+
+// --- 1. CORE VOLUME & FINANCIAL MEASURES ---
+
+Total Orders = 
+COUNTROWS('fact_orders_scored')
+
+Total Returned Orders = 
+CALCULATE(
+    COUNTROWS('fact_orders_scored'),
+    'fact_orders_scored'[is_returned] = 1
+)
+
+Return Rate % = 
+DIVIDE([Total Returned Orders], [Total Orders], 0)
+
+Gross Revenue = 
+SUM('fact_orders_scored'[net_amount])
+
+Total Refunded Amount = 
+CALCULATE(
+    SUM('fact_orders_scored'[net_amount]),
+    'fact_orders_scored'[is_returned] = 1
+)
+
+Revenue Return Rate % = 
+DIVIDE([Total Refunded Amount], [Gross Revenue], 0)
+
+Net Retained Revenue = 
+[Gross Revenue] - [Total Refunded Amount]
+
+Avg Order Value (AOV) = 
+DIVIDE([Gross Revenue], [Total Orders], 0)
+
+Avg Discount % = 
+AVERAGE('fact_orders_scored'[discount_percent])
+
+
+// --- 2. PREDICTIVE RISK & ML SCORE MEASURES ---
+
+Avg Predicted Return Risk % = 
+AVERAGE('fact_orders_scored'[predicted_return_prob])
+
+High Risk Orders Count = 
+CALCULATE(
+    COUNTROWS('fact_orders_scored'),
+    'fact_orders_scored'[risk_tier] = "High Risk"
+)
+
+High Risk Orders % = 
+DIVIDE([High Risk Orders Count], [Total Orders], 0)
+
+Total Expected Refund Loss = 
+SUM('fact_orders_scored'[expected_refund_loss])
+
+Expected vs Actual Return Variance = 
+[Avg Predicted Return Risk %] - [Return Rate %]
+
+
+// --- 3. LOGISTICS & PERFORMANCE KPI MEASURES ---
+
+Avg Actual Delivery Days = 
+AVERAGE('fact_orders_scored'[actual_delivery_days])
+
+Avg Delivery Delay Days = 
+AVERAGE('fact_orders_scored'[delivery_delay_days])
+
+Delayed Orders Count = 
+CALCULATE(
+    COUNTROWS('fact_orders_scored'),
+    'fact_orders_scored'[delivery_delay_days] > 0
+)
+
+Delayed Order Rate % = 
+DIVIDE([Delayed Orders Count], [Total Orders], 0)
+
+
+// --- 4. SUPPLIER & DEFECT BENCHMARK MEASURES ---
+
+Supplier Actual Return Rate = 
+DIVIDE(
+    CALCULATE(COUNTROWS('fact_orders_scored'), 'fact_orders_scored'[is_returned] = 1),
+    COUNTROWS('fact_orders_scored'),
+    0
+)
+
+Supplier Risk Variance = 
+[Supplier Actual Return Rate] - CALCULATE(AVERAGE('dim_suppliers'[defect_rate]))
+
+
+// --- 5. DYNAMIC COLOR CODING & KPI CARD FORMATTING (HEX CODES) ---
+
+Return Rate Color Code = 
+SWITCH(
+    TRUE(),
+    [Return Rate %] >= 0.40, "#EF4444",   // Red / Critical
+    [Return Rate %] >= 0.25, "#F59E0B",   // Amber / Warning
+    "#10B981"                             // Green / Normal
+)
+
+Risk Score Badge = 
+SWITCH(
+    TRUE(),
+    [Avg Predicted Return Risk %] >= 0.45, "🔴 High Risk",
+    [Avg Predicted Return Risk %] >= 0.25, "🟡 Moderate Risk",
+    "🟢 Low Risk"
+)

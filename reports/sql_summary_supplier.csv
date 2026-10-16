@@ -1,0 +1,11 @@
+supplier_id,supplier_name,country,quality_score,declared_defect_pct,total_orders,returned_orders,return_rate_pct,total_refunded_value
+SUP-101,Apex Fashion Mills,Vietnam,7.1,8.0,2295,1344,58.56,145582.61
+SUP-106,Stride Footwear Co,Indonesia,7.4,7.0,1849,901,48.73,131837.65
+SUP-102,Nordic Weave Textiles,Portugal,9.2,3.0,1961,946,48.24,86291.45
+SUP-105,Heritage Leathercraft,Italy,9.5,2.0,2236,858,38.37,139807.0
+SUP-104,Nova Tech Gadgets,China,6.8,9.0,1647,613,37.22,121672.33
+SUP-107,Terra Home & Decor,India,8.3,5.0,4234,1229,29.03,196781.31
+SUP-103,Zenith Electronic Works,Taiwan,8.9,4.0,2467,702,28.46,135507.74
+SUP-110,Summit Outdoor Gear,Cambodia,8.1,5.0,4217,1064,25.23,138980.19
+SUP-109,Aura Cosmetics Lab,South Korea,9.4,2.0,1424,220,15.45,12241.14
+SUP-108,PureGlow Botanicals,USA,9.8,1.0,2670,410,15.36,26971.19

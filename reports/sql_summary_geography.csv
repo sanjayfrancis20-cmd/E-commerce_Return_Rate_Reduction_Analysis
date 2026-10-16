@@ -1,0 +1,5 @@
+region,total_orders,total_returns,return_rate_pct,avg_delivery_days,avg_delay_days,pct_delayed
+West,9348,3412,36.5,5.17,1.83,71.22
+Northeast,5631,1834,32.57,4.37,1.05,50.22
+South,6778,2057,30.35,4.03,0.72,40.01
+Midwest,3243,984,30.34,4.01,0.72,39.56

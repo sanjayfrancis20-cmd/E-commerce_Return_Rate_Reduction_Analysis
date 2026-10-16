@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Return Rate Reduction & Risk Score Dashboard</title>
+  <meta name="description" content="AI & Machine Learning Powered E-commerce Return Rate Reduction Analytics Dashboard with drill-through filters and risk prediction">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+  <!-- Top Navigation & Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      </div>
+      <div class="header-title">
+        <h1>ReturnRisk AI <span>Analytics Suite</span></h1>
+        <p class="subtitle">E-Commerce Return Rate Reduction & Logistic Regression Prediction Model</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-badge live-pulse">
+        <span class="pulse-dot"></span>
+        Model Calibrated (ROC-AUC: 0.698)
+      </div>
+      <button id="btn-export-csv" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Export High-Risk CSV
+      </button>
+      <button id="btn-reset-filters" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+          <path d="M3 3v5h5"></path>
+        </svg>
+        Reset Filters
+      </button>
+    </div>
+  </header>
+
+  <!-- Interactive Drill-Through Filter Bar -->
+  <section class="filter-panel" id="filter-panel">
+    <div class="filter-header">
+      <div class="filter-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        <span>Interactive Drill-Through Controls:</span>
+      </div>
+      <div class="active-filter-tags" id="active-tags-container">
+        <!-- Dynamically rendered active filter pills -->
+      </div>
+    </div>
+    
+    <div class="filter-grid">
+      <!-- Category Filter -->
+      <div class="filter-item">
+        <label for="select-category">Category</label>
+        <select id="select-category" class="filter-select">
+          <option value="ALL">All Categories (6)</option>
+        </select>
+      </div>
+
+      <!-- Supplier Filter -->
+      <div class="filter-item">
+        <label for="select-supplier">Supplier</label>
+        <select id="select-supplier" class="filter-select">
+          <option value="ALL">All Suppliers (10)</option>
+        </select>
+      </div>
+
+      <!-- Channel Filter -->
+      <div class="filter-item">
+        <label for="select-channel">Marketing Channel</label>
+        <select id="select-channel" class="filter-select">
+          <option value="ALL">All Marketing Channels (6)</option>
+        </select>
+      </div>
+
+      <!-- Region Filter -->
+      <div class="filter-item">
+        <label for="select-region">Region</label>
+        <select id="select-region" class="filter-select">
+          <option value="ALL">All US Regions (4)</option>
+        </select>
+      </div>
+
+      <!-- Risk Tier Filter -->
+      <div class="filter-item">
+        <label for="select-risk-tier">Predicted Risk Tier</label>
+        <select id="select-risk-tier" class="filter-select">
+          <option value="ALL">All Risk Tiers</option>
+          <option value="High Risk">High Risk (Prob &ge; 45%)</option>
+          <option value="Medium Risk">Medium Risk (25% - 44%)</option>
+          <option value="Low Risk">Low Risk (&lt; 25%)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="dashboard-container">
+
+    <!-- KPI Summary Row -->
+    <div class="kpi-grid">
+      <!-- KPI 1: Total Orders -->
+      <div class="kpi-card card-glow" id="kpi-orders-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Total Orders</span>
+          <div class="kpi-icon icon-blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+        </div>
+        <div class="kpi-value" id="kpi-total-orders">25,000</div>
+        <div class="kpi-footer">
+          <span class="trend-neutral">100% Volume Analyzed</span>
+        </div>
+      </div>
+
+      <!-- KPI 2: Total Returns & Return Rate -->
+      <div class="kpi-card card-glow" id="kpi-returns-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Overall Return Rate</span>
+          <div class="kpi-icon icon-red">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 16l-4-4-4 4"></path>
+              <path d="M12 12V21"></path>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="kpi-value" id="kpi-return-rate">33.15%</div>
+        <div class="kpi-footer">
+          <span class="trend-down" id="kpi-returns-count">8,287 returned orders</span>
+        </div>
+      </div>
+
+      <!-- KPI 3: Revenue Lost to Returns -->
+      <div class="kpi-card card-glow" id="kpi-revenue-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Refunded Revenue</span>
+          <div class="kpi-icon icon-amber">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="kpi-value" id="kpi-refunded-revenue">$1,134,657</div>
+        <div class="kpi-footer">
+          <span class="trend-down" id="kpi-revenue-lost-pct">33.4% of Gross Sales</span>
+        </div>
+      </div>
+
+      <!-- KPI 4: AI Model Predicted Risk Exposure -->
+      <div class="kpi-card card-glow" id="kpi-risk-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Expected Refund Risk</span>
+          <div class="kpi-icon icon-purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20"></path>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="kpi-value" id="kpi-expected-risk">$1,130,820</div>
+        <div class="kpi-footer">
+          <span class="trend-badge" id="kpi-high-risk-badge">7,688 High-Risk Orders</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Grid Row 1 -->
+    <div class="charts-grid-row">
+      <!-- Chart 1: Return % by Category -->
+      <div class="chart-card">
+        <div class="card-top">
+          <div>
+            <h3>Return Rate by Product Category</h3>
+            <p class="card-desc">Click any category bar to immediately drill through the entire dashboard</p>
+          </div>
+          <span class="tag-pill">Drill-Through Ready</span>
+        </div>
+        <div class="chart-canvas-container" id="category-chart-container">
+          <!-- Rendered Category Bars -->
+        </div>
+      </div>
+
+      <!-- Chart 2: Return % by Supplier & Defect Score -->
+      <div class="chart-card">
+        <div class="card-top">
+          <div>
+            <h3>Supplier Performance & Return Propensity</h3>
+            <p class="card-desc">Comparison of actual return rate vs quality benchmark score</p>
+          </div>
+          <span class="tag-pill">10 Suppliers</span>
+        </div>
+        <div class="chart-canvas-container" id="supplier-chart-container">
+          <!-- Rendered Supplier Bars -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Grid Row 2: Channel, Geo, & Root Causes -->
+    <div class="charts-grid-row three-col">
+      <!-- Marketing Channel & Discount Impact -->
+      <div class="chart-card">
+        <div class="card-top">
+          <div>
+            <h3>Marketing Channel Return Propensity</h3>
+            <p class="card-desc">Paid Social drives highest returns</p>
+          </div>
+        </div>
+        <div class="channel-list-container" id="channel-container">
+          <!-- Rendered Channel Bars -->
+        </div>
+      </div>
+
+      <!-- Geographic Delivery Lag & Return Rate -->
+      <div class="chart-card">
+        <div class="card-top">
+          <div>
+            <h3>Geographic Transit Lag Impact</h3>
+            <p class="card-desc">Return rate vs Delivery Delay</p>
+          </div>
+        </div>
+        <div class="geo-list-container" id="geography-container">
+          <!-- Rendered Geo Cards -->
+        </div>
+      </div>
+
+      <!-- Root Cause Return Reasons -->
+      <div class="chart-card">
+        <div class="card-top">
+          <div>
+            <h3>Primary Return Root Causes</h3>
+            <p class="card-desc">Fit & Sizing drive 54% of returns</p>
+          </div>
+        </div>
+        <div class="reasons-donut-container" id="reasons-container">
+          <!-- Rendered Reason Breakdown -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Logistic Regression Feature Weights & Model Drivers -->
+    <div class="chart-card mb-4">
+      <div class="card-top">
+        <div>
+          <h3>Logistic Regression Predictors (Odds Ratios)</h3>
+          <p class="card-desc">Odds Ratio &gt; 1.0 increases return probability; &lt; 1.0 reduces return probability</p>
+        </div>
+        <div class="odds-legend">
+          <span class="legend-box red-box"></span> Risk Multiplier
+          <span class="legend-box green-box ml-2"></span> Retention Factor
+        </div>
+      </div>
+      <div class="odds-ratio-grid" id="odds-container">
+        <!-- Rendered Odds Ratio badges -->
+      </div>
+    </div>
+
+    <!-- High-Risk Products Table with Drill-Through Modal Trigger -->
+    <section class="table-section chart-card" id="high-risk-section">
+      <div class="table-header-bar">
+        <div>
+          <h3>High-Risk Products Catalog & Action Playbook</h3>
+          <p class="card-desc">Ranked by Machine Learning Predicted Return Probability and Refund Exposure</p>
+        </div>
+        <div class="table-actions">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="product-search-input" placeholder="Search product, category, or supplier...">
+          </div>
+          <span class="badge-count" id="product-count-badge">41 High-Risk SKUs</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table" id="high-risk-table">
+          <thead>
+            <tr>
+              <th data-sort="product_id">Product ID</th>
+              <th data-sort="product_name">Product Name</th>
+              <th data-sort="category">Category</th>
+              <th data-sort="supplier_name">Supplier</th>
+              <th data-sort="unit_price" class="text-right">Price</th>
+              <th data-sort="actual_return_rate_pct" class="text-right">Actual Return %</th>
+              <th data-sort="avg_predicted_risk_pct" class="text-right">Predicted Risk %</th>
+              <th data-sort="total_refund_amount" class="text-right">Refund Exposure</th>
+              <th>Primary Return Reason</th>
+              <th>Action Playbook</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody id="high-risk-tbody">
+            <!-- Rendered product rows -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Drill-Through Product Inspection Modal -->
+  <div class="modal-overlay" id="drill-modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge" id="modal-sku-badge">PRD-1001</span>
+          <h2 id="modal-product-title">Dresses Model A</h2>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic Drill-Through Details -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

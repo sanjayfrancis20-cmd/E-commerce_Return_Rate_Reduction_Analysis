@@ -1,0 +1,11 @@
+supplier_id,supplier_name,country,defect_rate,quality_score
+SUP-101,Apex Fashion Mills,Vietnam,0.08,7.1
+SUP-102,Nordic Weave Textiles,Portugal,0.03,9.2
+SUP-103,Zenith Electronic Works,Taiwan,0.04,8.9
+SUP-104,Nova Tech Gadgets,China,0.09,6.8
+SUP-105,Heritage Leathercraft,Italy,0.02,9.5
+SUP-106,Stride Footwear Co,Indonesia,0.07,7.4
+SUP-107,Terra Home & Decor,India,0.05,8.3
+SUP-108,PureGlow Botanicals,USA,0.01,9.8
+SUP-109,Aura Cosmetics Lab,South Korea,0.02,9.4
+SUP-110,Summit Outdoor Gear,Cambodia,0.05,8.1

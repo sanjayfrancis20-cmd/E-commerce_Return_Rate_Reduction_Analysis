@@ -1,0 +1,121 @@
+product_id,product_name,category,subcategory,supplier_id,unit_price,cost_price,sizing_sensitive,base_return_risk
+PRD-1001,Dresses Model A,Apparel & Fashion,Dresses,SUP-101,32.78,13.28,1,0.28
+PRD-1002,Dresses Model B,Apparel & Fashion,Dresses,SUP-101,50.07,18.55,1,0.28
+PRD-1003,Dresses Model C,Apparel & Fashion,Dresses,SUP-101,118.16,42.11,1,0.28
+PRD-1004,Dresses Model D,Apparel & Fashion,Dresses,SUP-101,62.01,27.97,1,0.28
+PRD-1005,Jeans & Denim Model A,Apparel & Fashion,Jeans & Denim,SUP-101,113.75,56.1,1,0.28
+PRD-1006,Jeans & Denim Model B,Apparel & Fashion,Jeans & Denim,SUP-102,62.29,29.14,1,0.28
+PRD-1007,Jeans & Denim Model C,Apparel & Fashion,Jeans & Denim,SUP-101,143.58,54.84,1,0.28
+PRD-1008,Jeans & Denim Model D,Apparel & Fashion,Jeans & Denim,SUP-102,80.38,30.63,1,0.28
+PRD-1009,T-Shirts & Tops Model A,Apparel & Fashion,T-Shirts & Tops,SUP-102,44.43,18.93,1,0.28
+PRD-1010,T-Shirts & Tops Model B,Apparel & Fashion,T-Shirts & Tops,SUP-102,156.97,73.89,1,0.28
+PRD-1011,T-Shirts & Tops Model C,Apparel & Fashion,T-Shirts & Tops,SUP-101,139.19,63.64,1,0.28
+PRD-1012,T-Shirts & Tops Model D,Apparel & Fashion,T-Shirts & Tops,SUP-102,40.9,16.71,1,0.28
+PRD-1013,Outerwear & Jackets Model A,Apparel & Fashion,Outerwear & Jackets,SUP-102,116.18,57.03,1,0.28
+PRD-1014,Outerwear & Jackets Model B,Apparel & Fashion,Outerwear & Jackets,SUP-101,128.85,65.02,1,0.28
+PRD-1015,Outerwear & Jackets Model C,Apparel & Fashion,Outerwear & Jackets,SUP-101,158.15,82.76,1,0.28
+PRD-1016,Outerwear & Jackets Model D,Apparel & Fashion,Outerwear & Jackets,SUP-102,70.97,33.86,1,0.28
+PRD-1017,Activewear Model A,Apparel & Fashion,Activewear,SUP-102,53.56,22.55,1,0.28
+PRD-1018,Activewear Model B,Apparel & Fashion,Activewear,SUP-102,134.97,65.69,1,0.28
+PRD-1019,Activewear Model C,Apparel & Fashion,Activewear,SUP-101,120.98,46.48,1,0.28
+PRD-1020,Activewear Model D,Apparel & Fashion,Activewear,SUP-101,53.67,22.86,1,0.28
+PRD-1021,Running Shoes Model A,Footwear,Running Shoes,SUP-105,164.81,85.47,1,0.22
+PRD-1022,Running Shoes Model B,Footwear,Running Shoes,SUP-105,85.08,30.32,1,0.22
+PRD-1023,Running Shoes Model C,Footwear,Running Shoes,SUP-106,115.2,41.84,1,0.22
+PRD-1024,Running Shoes Model D,Footwear,Running Shoes,SUP-106,82.21,36.98,1,0.22
+PRD-1025,Formal Shoes Model A,Footwear,Formal Shoes,SUP-106,70.0,26.45,1,0.22
+PRD-1026,Formal Shoes Model B,Footwear,Formal Shoes,SUP-106,175.73,76.56,1,0.22
+PRD-1027,Formal Shoes Model C,Footwear,Formal Shoes,SUP-106,108.35,59.53,1,0.22
+PRD-1028,Formal Shoes Model D,Footwear,Formal Shoes,SUP-105,134.17,49.4,1,0.22
+PRD-1029,Boots Model A,Footwear,Boots,SUP-105,195.69,74.47,1,0.22
+PRD-1030,Boots Model B,Footwear,Boots,SUP-105,183.61,79.77,1,0.22
+PRD-1031,Boots Model C,Footwear,Boots,SUP-105,112.33,52.7,1,0.22
+PRD-1032,Boots Model D,Footwear,Boots,SUP-106,137.6,74.88,1,0.22
+PRD-1033,Sandals Model A,Footwear,Sandals,SUP-105,164.05,61.18,1,0.22
+PRD-1034,Sandals Model B,Footwear,Sandals,SUP-106,179.5,75.04,1,0.22
+PRD-1035,Sandals Model C,Footwear,Sandals,SUP-106,121.08,53.37,1,0.22
+PRD-1036,Sandals Model D,Footwear,Sandals,SUP-106,215.08,108.05,1,0.22
+PRD-1037,Sneakers Model A,Footwear,Sneakers,SUP-105,197.34,80.85,1,0.22
+PRD-1038,Sneakers Model B,Footwear,Sneakers,SUP-105,71.75,36.05,1,0.22
+PRD-1039,Sneakers Model C,Footwear,Sneakers,SUP-105,149.82,67.08,1,0.22
+PRD-1040,Sneakers Model D,Footwear,Sneakers,SUP-105,207.59,109.14,1,0.22
+PRD-1041,Wireless Audio Model A,Electronics,Wireless Audio,SUP-104,134.37,53.5,0,0.14
+PRD-1042,Wireless Audio Model B,Electronics,Wireless Audio,SUP-103,70.55,31.55,0,0.14
+PRD-1043,Wireless Audio Model C,Electronics,Wireless Audio,SUP-103,440.86,201.27,0,0.14
+PRD-1044,Wireless Audio Model D,Electronics,Wireless Audio,SUP-103,88.28,39.29,0,0.14
+PRD-1045,Smartwatches Model A,Electronics,Smartwatches,SUP-103,145.0,76.05,0,0.14
+PRD-1046,Smartwatches Model B,Electronics,Smartwatches,SUP-104,435.21,233.18,0,0.14
+PRD-1047,Smartwatches Model C,Electronics,Smartwatches,SUP-103,330.87,142.21,0,0.14
+PRD-1048,Smartwatches Model D,Electronics,Smartwatches,SUP-104,216.81,98.33,0,0.14
+PRD-1049,Phone Accessories Model A,Electronics,Phone Accessories,SUP-103,137.88,50.02,0,0.14
+PRD-1050,Phone Accessories Model B,Electronics,Phone Accessories,SUP-103,279.15,110.55,0,0.14
+PRD-1051,Phone Accessories Model C,Electronics,Phone Accessories,SUP-103,37.98,18.67,0,0.14
+PRD-1052,Phone Accessories Model D,Electronics,Phone Accessories,SUP-103,130.01,69.05,0,0.14
+PRD-1053,Tablets Model A,Electronics,Tablets,SUP-104,64.41,25.61,0,0.14
+PRD-1054,Tablets Model B,Electronics,Tablets,SUP-104,123.91,46.65,0,0.14
+PRD-1055,Tablets Model C,Electronics,Tablets,SUP-104,135.84,60.39,0,0.14
+PRD-1056,Tablets Model D,Electronics,Tablets,SUP-104,114.02,42.12,0,0.14
+PRD-1057,Smart Home Model A,Electronics,Smart Home,SUP-104,182.03,78.68,0,0.14
+PRD-1058,Smart Home Model B,Electronics,Smart Home,SUP-103,314.45,171.95,0,0.14
+PRD-1059,Smart Home Model C,Electronics,Smart Home,SUP-103,60.15,29.81,0,0.14
+PRD-1060,Smart Home Model D,Electronics,Smart Home,SUP-103,138.19,53.62,0,0.14
+PRD-1061,Bedding & Linens Model A,Home & Furniture,Bedding & Linens,SUP-107,66.35,25.66,0,0.12
+PRD-1062,Bedding & Linens Model B,Home & Furniture,Bedding & Linens,SUP-107,98.69,52.76,0,0.12
+PRD-1063,Bedding & Linens Model C,Home & Furniture,Bedding & Linens,SUP-107,263.37,137.27,0,0.12
+PRD-1064,Bedding & Linens Model D,Home & Furniture,Bedding & Linens,SUP-107,39.92,21.95,0,0.12
+PRD-1065,Accent Rugs Model A,Home & Furniture,Accent Rugs,SUP-107,310.85,166.39,0,0.12
+PRD-1066,Accent Rugs Model B,Home & Furniture,Accent Rugs,SUP-107,74.06,33.11,0,0.12
+PRD-1067,Accent Rugs Model C,Home & Furniture,Accent Rugs,SUP-107,280.07,148.57,0,0.12
+PRD-1068,Accent Rugs Model D,Home & Furniture,Accent Rugs,SUP-107,136.8,74.84,0,0.12
+PRD-1069,Kitchen Appliances Model A,Home & Furniture,Kitchen Appliances,SUP-107,298.32,151.26,0,0.12
+PRD-1070,Kitchen Appliances Model B,Home & Furniture,Kitchen Appliances,SUP-107,149.79,81.11,0,0.12
+PRD-1071,Kitchen Appliances Model C,Home & Furniture,Kitchen Appliances,SUP-107,70.67,28.93,0,0.12
+PRD-1072,Kitchen Appliances Model D,Home & Furniture,Kitchen Appliances,SUP-107,195.86,89.79,0,0.12
+PRD-1073,Lighting Model A,Home & Furniture,Lighting,SUP-107,41.86,19.54,0,0.12
+PRD-1074,Lighting Model B,Home & Furniture,Lighting,SUP-107,41.78,18.87,0,0.12
+PRD-1075,Lighting Model C,Home & Furniture,Lighting,SUP-107,45.21,16.44,0,0.12
+PRD-1076,Lighting Model D,Home & Furniture,Lighting,SUP-107,144.11,77.58,0,0.12
+PRD-1077,Wall Decor Model A,Home & Furniture,Wall Decor,SUP-107,195.78,70.08,0,0.12
+PRD-1078,Wall Decor Model B,Home & Furniture,Wall Decor,SUP-107,148.67,69.39,0,0.12
+PRD-1079,Wall Decor Model C,Home & Furniture,Wall Decor,SUP-107,300.74,117.54,0,0.12
+PRD-1080,Wall Decor Model D,Home & Furniture,Wall Decor,SUP-107,95.41,40.95,0,0.12
+PRD-1081,Skincare Sets Model A,Beauty & Personal Care,Skincare Sets,SUP-109,60.06,32.18,0,0.05
+PRD-1082,Skincare Sets Model B,Beauty & Personal Care,Skincare Sets,SUP-108,18.86,8.94,0,0.05
+PRD-1083,Skincare Sets Model C,Beauty & Personal Care,Skincare Sets,SUP-108,24.74,9.71,0,0.05
+PRD-1084,Skincare Sets Model D,Beauty & Personal Care,Skincare Sets,SUP-109,30.19,12.67,0,0.05
+PRD-1085,Serums & Oils Model A,Beauty & Personal Care,Serums & Oils,SUP-108,98.89,41.92,0,0.05
+PRD-1086,Serums & Oils Model B,Beauty & Personal Care,Serums & Oils,SUP-108,58.31,26.74,0,0.05
+PRD-1087,Serums & Oils Model C,Beauty & Personal Care,Serums & Oils,SUP-109,74.27,40.66,0,0.05
+PRD-1088,Serums & Oils Model D,Beauty & Personal Care,Serums & Oils,SUP-108,79.44,36.62,0,0.05
+PRD-1089,Hair Styling Tools Model A,Beauty & Personal Care,Hair Styling Tools,SUP-108,104.38,39.34,0,0.05
+PRD-1090,Hair Styling Tools Model B,Beauty & Personal Care,Hair Styling Tools,SUP-108,99.85,49.77,0,0.05
+PRD-1091,Hair Styling Tools Model C,Beauty & Personal Care,Hair Styling Tools,SUP-108,43.06,20.28,0,0.05
+PRD-1092,Hair Styling Tools Model D,Beauty & Personal Care,Hair Styling Tools,SUP-109,36.73,17.51,0,0.05
+PRD-1093,Fragrances Model A,Beauty & Personal Care,Fragrances,SUP-109,64.5,25.81,0,0.05
+PRD-1094,Fragrances Model B,Beauty & Personal Care,Fragrances,SUP-108,26.49,11.52,0,0.05
+PRD-1095,Fragrances Model C,Beauty & Personal Care,Fragrances,SUP-109,22.06,9.19,0,0.05
+PRD-1096,Fragrances Model D,Beauty & Personal Care,Fragrances,SUP-108,76.61,30.83,0,0.05
+PRD-1097,Makeup Palettes Model A,Beauty & Personal Care,Makeup Palettes,SUP-109,68.75,29.94,0,0.05
+PRD-1098,Makeup Palettes Model B,Beauty & Personal Care,Makeup Palettes,SUP-108,28.29,15.25,0,0.05
+PRD-1099,Makeup Palettes Model C,Beauty & Personal Care,Makeup Palettes,SUP-108,68.19,35.25,0,0.05
+PRD-1100,Makeup Palettes Model D,Beauty & Personal Care,Makeup Palettes,SUP-108,57.54,20.62,0,0.05
+PRD-1101,Yoga Equipment Model A,Sports & Outdoors,Yoga Equipment,SUP-110,191.01,97.27,0,0.09
+PRD-1102,Yoga Equipment Model B,Sports & Outdoors,Yoga Equipment,SUP-110,191.0,74.87,0,0.09
+PRD-1103,Yoga Equipment Model C,Sports & Outdoors,Yoga Equipment,SUP-110,147.38,62.01,0,0.09
+PRD-1104,Yoga Equipment Model D,Sports & Outdoors,Yoga Equipment,SUP-110,205.08,102.52,0,0.09
+PRD-1105,Camping Essentials Model A,Sports & Outdoors,Camping Essentials,SUP-110,184.55,100.62,0,0.09
+PRD-1106,Camping Essentials Model B,Sports & Outdoors,Camping Essentials,SUP-110,187.71,66.63,0,0.09
+PRD-1107,Camping Essentials Model C,Sports & Outdoors,Camping Essentials,SUP-110,169.09,73.1,0,0.09
+PRD-1108,Camping Essentials Model D,Sports & Outdoors,Camping Essentials,SUP-110,72.16,36.62,0,0.09
+PRD-1109,Hydration Packs Model A,Sports & Outdoors,Hydration Packs,SUP-110,93.92,33.6,0,0.09
+PRD-1110,Hydration Packs Model B,Sports & Outdoors,Hydration Packs,SUP-110,63.82,32.76,0,0.09
+PRD-1111,Hydration Packs Model C,Sports & Outdoors,Hydration Packs,SUP-110,87.74,45.11,0,0.09
+PRD-1112,Hydration Packs Model D,Sports & Outdoors,Hydration Packs,SUP-110,63.91,30.81,0,0.09
+PRD-1113,Fitness Trackers Model A,Sports & Outdoors,Fitness Trackers,SUP-110,83.71,43.77,0,0.09
+PRD-1114,Fitness Trackers Model B,Sports & Outdoors,Fitness Trackers,SUP-110,88.02,39.77,0,0.09
+PRD-1115,Fitness Trackers Model C,Sports & Outdoors,Fitness Trackers,SUP-110,198.58,74.08,0,0.09
+PRD-1116,Fitness Trackers Model D,Sports & Outdoors,Fitness Trackers,SUP-110,55.57,30.15,0,0.09
+PRD-1117,Cycling Gear Model A,Sports & Outdoors,Cycling Gear,SUP-110,29.19,13.7,0,0.09
+PRD-1118,Cycling Gear Model B,Sports & Outdoors,Cycling Gear,SUP-110,158.97,65.61,0,0.09
+PRD-1119,Cycling Gear Model C,Sports & Outdoors,Cycling Gear,SUP-110,94.42,43.94,0,0.09
+PRD-1120,Cycling Gear Model D,Sports & Outdoors,Cycling Gear,SUP-110,30.34,13.26,0,0.09
