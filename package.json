@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "E-Commerce Return Rate Reduction & Risk Score Dashboard",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjayfrancis20-cmd/E-commerce_Return_Rate_Reduction_Analysis.git"
+  },
+  "homepage": "https://github.com/sanjayfrancis20-cmd/E-commerce_Return_Rate_Reduction_Analysis#readme",
   "scripts": {
     "build": "echo 'Build complete'",
     "start": "npx -y serve dashboard"

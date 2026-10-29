@@ -50,7 +50,14 @@ E-commerce Return Rate Reduction Analysis/
 
 ## Quickstart
 
-### 1. Run the Entire Pipeline
+### 1. Clone the Repository
+```bash
+git clone https://github.com/sanjayfrancis20-cmd/E-commerce_Return_Rate_Reduction_Analysis.git
+cd E-commerce_Return_Rate_Reduction_Analysis
+pip install -r requirements.txt
+```
+
+### 2. Run the Entire Pipeline
 To regenerate the dataset, clean data, execute SQL queries, train the Logistic Regression model, score high-risk products, and build all artifacts:
 ```bash
 python run_pipeline.py
