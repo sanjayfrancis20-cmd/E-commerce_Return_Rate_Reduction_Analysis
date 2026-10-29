@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-return-rate-reduction-analysis",
+  "version": "1.0.0",
+  "description": "E-Commerce Return Rate Reduction & Risk Score Dashboard",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "start": "npx -y serve dashboard"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
