@@ -441,8 +441,8 @@ function renderProductTable() {
       <td class="text-right"><span class="badge-risk ${riskBadgeClass}">${p.avg_predicted_risk_pct}%</span></td>
       <td class="text-right">$${Math.round(p.refunded || 0).toLocaleString()}</td>
       <td><span style="color: #cbd5e1;">${p.primary_return_reason}</span></td>
-      <td><span class="action-playbook-tag">${p.recommended_mitigation_action}</span></td>
-      <td class="text-center">
+      <td class="cell-playbook"><span class="action-playbook-tag">${p.recommended_mitigation_action}</span></td>
+      <td class="text-center cell-action">
         <button class="btn-inspect" onclick="openProductModal('${p.product_id}')">Drill</button>
       </td>
     `;
