@@ -3104,63 +3104,63 @@
   "top_features": [
     {
       "feature": "category_Beauty & Personal Care",
-      "coefficient": -1.903951564755269,
-      "odds_ratio": 0.1489787553486216,
-      "abs_importance": 1.903951564755269
+      "coefficient": -1.9039515647552865,
+      "odds_ratio": 0.1489787553486189,
+      "abs_importance": 1.9039515647552865
     },
     {
       "feature": "category_Sports & Outdoors",
-      "coefficient": -1.2762545890860129,
-      "odds_ratio": 0.2790806169977477,
-      "abs_importance": 1.2762545890860129
+      "coefficient": -1.276254589086075,
+      "odds_ratio": 0.2790806169977303,
+      "abs_importance": 1.276254589086075
     },
     {
       "feature": "category_Home & Furniture",
-      "coefficient": -1.0545075818840473,
-      "odds_ratio": 0.3483639257862546,
-      "abs_importance": 1.0545075818840473
+      "coefficient": -1.0545075818840886,
+      "odds_ratio": 0.3483639257862401,
+      "abs_importance": 1.0545075818840886
     },
     {
       "feature": "category_Electronics",
-      "coefficient": -0.9618012894341048,
-      "odds_ratio": 0.3822038058678876,
-      "abs_importance": 0.9618012894341048
+      "coefficient": -0.9618012894341382,
+      "odds_ratio": 0.3822038058678748,
+      "abs_importance": 0.9618012894341382
     },
     {
       "feature": "marketing_channel_Direct",
-      "coefficient": -0.5403797576673907,
-      "odds_ratio": 0.5825269912724511,
-      "abs_importance": 0.5403797576673907
+      "coefficient": -0.540379757667338,
+      "odds_ratio": 0.5825269912724818,
+      "abs_importance": 0.540379757667338
     },
     {
       "feature": "category_Footwear",
-      "coefficient": -0.4486234289991439,
-      "odds_ratio": 0.6385064964579389,
-      "abs_importance": 0.4486234289991439
+      "coefficient": -0.4486234289991471,
+      "odds_ratio": 0.6385064964579369,
+      "abs_importance": 0.4486234289991471
     },
     {
       "feature": "marketing_channel_Email Marketing",
-      "coefficient": -0.4406575196610754,
-      "odds_ratio": 0.6436130936621333,
-      "abs_importance": 0.4406575196610754
+      "coefficient": -0.4406575196609826,
+      "odds_ratio": 0.643613093662193,
+      "abs_importance": 0.4406575196609826
     },
     {
       "feature": "payment_method_Klarna / Buy Now Pay Later",
-      "coefficient": 0.4337552940729601,
-      "odds_ratio": 1.5430412305785102,
-      "abs_importance": 0.4337552940729601
+      "coefficient": 0.4337552940730369,
+      "odds_ratio": 1.5430412305786283,
+      "abs_importance": 0.4337552940730369
     },
     {
       "feature": "marketing_channel_Organic Search",
-      "coefficient": -0.3001567594975712,
-      "odds_ratio": 0.7407020994914397,
-      "abs_importance": 0.3001567594975712
+      "coefficient": -0.3001567594974968,
+      "odds_ratio": 0.7407020994914948,
+      "abs_importance": 0.3001567594974968
     },
     {
       "feature": "delivery_delay_days",
-      "coefficient": 0.2657692261084512,
-      "odds_ratio": 1.3044339946401915,
-      "abs_importance": 0.2657692261084512
+      "coefficient": 0.2657692261084269,
+      "odds_ratio": 1.30443399464016,
+      "abs_importance": 0.2657692261084269
     }
   ],
   "sample_orders": [
